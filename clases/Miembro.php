@@ -38,7 +38,7 @@
         }
 
         public function __toString(){
-            return "Nombre: ". $this->nombre . "," . $this->apellidos . ", Email:  " .$this->email;
+            return "Nombre: ". $this->nombre . " " . $this->apellidos . ", Email:  " .$this->email;
         }
     }
 ?>
