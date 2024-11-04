@@ -35,5 +35,9 @@
         public function setCreditos($creditos){
                 $this->creditos = $creditos;
         }
+        public function __toString(){
+            return "Nombre: ". $this->nombre . ", " ."Créditos: " . $this->creditos;
+        }
     }
+    
 ?>
