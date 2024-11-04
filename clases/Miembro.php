@@ -37,7 +37,7 @@
                 $this->email = $email;
         }
 
-        public function __tostring(){
+        public function __toString(){
             return "Miembro: (ID: " .$this->id. ", Nombre: ". $this->nombre . ", Apellidos: " . $this->apellidos . ", Email:  " .$this->email . ")";
         }
     }
