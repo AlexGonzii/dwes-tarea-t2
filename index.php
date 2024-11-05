@@ -34,49 +34,39 @@
 ?>
 <h2>Alumnos</h2>
 <ul>
-<?php foreach($alumnos as $alumno) { ?>
-    <li> 
-      <?= $alumno ?>
-    </li>
-    <?php } ?>
+<?php foreach($alumnos as $alumno): ?>
+    <li><?= $alumno ?></li>
+    <?php endforeach; ?>
 </ul>
 <h2>Profesores</h2>
 <ul>
-<?php foreach($profesores as $profesor) { ?>
-    <li>
-       <?= $profesor ?>
-    </li>
-    <?php } ?>
+<?php foreach($profesores as $profesor): ?>
+    <li><?= $profesor ?></li>
+    <?php endforeach; ?>
 </ul>
 <h2>Asignaturas</h2>
 <ul>
-<?php foreach($asignaturas as $asignatura) { ?>
-    <li> 
-       <?= $asignatura ?> 
-    </li>
-    <?php } ?>
+<?php foreach($asignaturas as $asignatura): ?>
+    <li><?= $asignatura ?></li>
+    <?php endforeach; ?>
 </ul>
 <h2>Alumnos <= 23</h2>
 <?php $filtrarEdad = array_filter($alumnos,function($alumno){
     return $alumno->getEdad() <= 23;
 });?>
 <ul>
-<?php foreach($filtrarEdad as $alumno) { ?>
-    <li>
-        <?= $alumno ?> 
-    </li>
-    <?php } ?>
+<?php foreach($filtrarEdad as $alumno): ?>
+    <li><?= $alumno ?></li>
+    <?php endforeach; ?>
 </ul>
 <h2>Alumnos con al menos dos asignaturas</h2>
 <?php $filtrarAsig = array_filter($alumnos,function($alumno){
     return count($alumno->getAsignaturas()) >= 2;
 });?>
 <ul>
-<?php foreach($filtrarAsig as $alumno) { ?>
-    <li>
-        <?= $alumno ?> 
-    </li>
-    <?php } ?>
+<?php foreach($filtrarAsig as $alumno): ?>
+    <li><?= $alumno ?></li>
+    <?php endforeach; ?>
 </ul>
 <h2>Asignaturas con algún alumno matriculado</h2>
 <?php $asignaturasConAlumnos = array_filter($asignaturas, function($asignatura) use ($alumnos) {
@@ -88,11 +78,9 @@
     return false;
 });?>
 <ul>
-<?php foreach ($asignaturasConAlumnos as $asignatura) { ?>
-    <li>
-       <?= $asignatura ?> 
-    </li>
-    <?php } ?>
+<?php foreach ($asignaturasConAlumnos as $asignatura): ?>
+    <li><?= $asignatura ?></li>
+    <?php endforeach; ?>
 </ul>
 </body>
 </html>
