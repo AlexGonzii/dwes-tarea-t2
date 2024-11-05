@@ -43,7 +43,7 @@ $filtrarLibros = array_filter($libros,function($libro){
         <tr>
         <td> <?= $libro['titulo'] ?> </td>
         <td> <?= $libro['autor'] ?> </td>
-        <td> <?= $libro['precio'] ?> </td>
+        <td> <?= $libro['precio'] ?> € </td>
         <td> <?= $libro['categoria'] ?> </td>
         </tr>
     <?php } ?>
