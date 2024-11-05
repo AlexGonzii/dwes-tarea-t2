@@ -29,30 +29,33 @@ $libros = [
 ];
 $filtrarLibros = array_filter($libros,function($libro){
     return $libro['categoria'] == "Desarrollo web";
-});
-?>
+});?>
+
 <h2>Información de todos los libros</h2>
 <table border="1">
-    <tr><th>Nombre</th><th>Autor</th><th>Precio</th><th>Categoría</th></tr>
-    <?php
-    foreach($libros as $libro){
-        echo "<tr>";
-        echo "<td>".$libro['titulo']."</td>";
-        echo "<td>".$libro['autor']."</td>";
-        echo "<td>".$libro['precio']."€"."</td>";
-        echo "<td>".$libro['categoria']."</td>";
-        echo "</tr>";
-    }
-    ?>
+    <tr>
+        <th>Nombre</th>
+        <th>Autor</th>
+        <th>Precio</th>
+        <th>Categoría</th>
+    </tr>
+    <?php foreach($libros as $libro) { ?>
+        <tr>
+        <td> <?= $libro['titulo'] ?> </td>
+        <td> <?= $libro['autor'] ?> </td>
+        <td> <?= $libro['precio'] ?> </td>
+        <td> <?= $libro['categoria'] ?> </td>
+        </tr>
+    <?php } ?>
 </table>
-<h2>Libros de la categoría 'Desarrollo web'</h2>
 
-<?php
-echo "<ol>";
-foreach($filtrarLibros as $libro1) {
-    echo "<li>" . $libro1['titulo'] . "</li>";
-    }
-echo "</ol>";
-?>
+<h2>Libros de la categoría 'Desarrollo web'</h2>
+<ol>
+<?php foreach($filtrarLibros as $libro1) { ?>
+    <li> 
+        <?= $libro1['titulo'] ?>
+    </li>
+    <?php } ?>
+</ol>
 </body>
 </html>
