@@ -39,23 +39,21 @@ $filtrarLibros = array_filter($libros,function($libro){
         <th>Precio</th>
         <th>Categoría</th>
     </tr>
-    <?php foreach($libros as $libro) { ?>
+    <?php foreach($libros as $libro): ?>
         <tr>
         <td> <?= $libro['titulo'] ?> </td>
         <td> <?= $libro['autor'] ?> </td>
         <td> <?= $libro['precio'] ?> € </td>
         <td> <?= $libro['categoria'] ?> </td>
         </tr>
-    <?php } ?>
+    <?php endforeach; ?>
 </table>
 
 <h2>Libros de la categoría 'Desarrollo web'</h2>
 <ol>
-<?php foreach($filtrarLibros as $libro1) { ?>
-    <li> 
-        <?= $libro1['titulo'] ?>
-    </li>
-    <?php } ?>
+<?php foreach($filtrarLibros as $libro1): ?>
+    <li> <?= $libro1['titulo'] ?> </li>
+    <?php endforeach ;?>
 </ol>
 </body>
 </html>
